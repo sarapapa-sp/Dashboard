@@ -1,0 +1,667 @@
+:root {
+    --gm-green: #00843d;
+    --gm-green-dark: #006b32;
+    --gm-green-soft: #eaf5ee;
+    --ink: #17231c;
+    --muted: #68766e;
+    --line: #e2e9e4;
+    --surface: #ffffff;
+    --page: #f4f7f5;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+
+.app-shell {
+    min-height: 100vh;
+    background: var(--page);
+}
+
+.topbar {
+    width: 100%;
+    min-height: 76px;
+    padding: 0 5.2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    color: #fff;
+    background: linear-gradient(105deg, #006b35 0%, #00843d 55%, #159653 100%);
+    box-shadow: 0 3px 12px rgba(0, 65, 31, 0.16);
+}
+
+.brand-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 54px;
+    height: 42px;
+    padding: 0 12px;
+    border: 1px solid rgba(255,255,255,.48);
+    border-radius: 8px;
+    background: rgba(255,255,255,.12);
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.brand-title {
+    margin-left: auto;
+    font-size: 21px;
+    font-weight: 650;
+    letter-spacing: .2px;
+}
+
+.page {
+    width: min(1440px, 94%);
+    margin: 0 auto;
+    padding: 32px 0 24px;
+}
+
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 0 0 22px;
+}
+
+.page-header h2 {
+    margin: 0 0 7px;
+    color: #1d3025;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: -.45px;
+}
+
+.page-header p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13.5px;
+}
+
+.record-count {
+    flex-shrink: 0;
+    padding: 9px 14px;
+    border: 1px solid #cfe4d5;
+    border-radius: 20px;
+    background: var(--gm-green-soft);
+    color: var(--gm-green-dark);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.controls-card,
+.grid-card {
+    border: 1px solid var(--line);
+    border-radius: 13px;
+    background: var(--surface);
+    box-shadow: 0 3px 12px rgba(25, 55, 37, .045);
+}
+
+.controls-card {
+    display: grid;
+    grid-template-columns: minmax(240px, 1fr) minmax(240px, 1fr) auto;
+    align-items: end;
+    gap: 22px;
+    padding: 22px;
+    margin-bottom: 22px;
+}
+
+.control label {
+    display: block;
+    margin-bottom: 9px;
+    color: #263b2e;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.control small {
+    display: block;
+    margin-top: 7px;
+    color: #829087;
+    font-size: 11.5px;
+}
+
+.control .Select-control,
+.control .Select__control,
+.control .Select-control,
+.control .Select__control {
+    min-height: 42px;
+    border-color: #d7e1da;
+    border-radius: 7px;
+    box-shadow: none;
+}
+
+.control .Select-control:hover,
+.control .Select__control:hover {
+    border-color: #8bb99a;
+}
+
+.refresh-area {
+    min-width: 155px;
+}
+
+.refresh-button {
+    width: 100%;
+    min-height: 43px;
+    padding: 0 20px;
+    border: 0;
+    border-radius: 7px;
+    background: var(--gm-green);
+    color: #fff;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background .15s ease, transform .15s ease, box-shadow .15s ease;
+    box-shadow: 0 3px 7px rgba(0, 132, 61, .18);
+}
+
+.refresh-button:hover {
+    background: var(--gm-green-dark);
+    box-shadow: 0 5px 12px rgba(0, 107, 50, .2);
+    transform: translateY(-1px);
+}
+
+.refresh-button:active {
+    transform: translateY(0);
+}
+
+.refresh-status {
+    min-height: 16px;
+    margin-top: 7px;
+    color: #75837a;
+    font-size: 10.5px;
+    text-align: center;
+}
+
+.grid-card {
+    overflow: hidden;
+    padding: 0 18px 18px;
+}
+
+.grid-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 18px 2px 15px;
+}
+
+.grid-heading h4 {
+    margin: 0;
+    color: #24382b;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.grid-heading span {
+    color: #849087;
+    font-size: 11.5px;
+}
+
+.ag-theme-quartz {
+    --ag-font-family: Inter, "Segoe UI", Arial, sans-serif;
+    --ag-font-size: 12px;
+    --ag-foreground-color: #26352c;
+    --ag-background-color: #ffffff;
+    --ag-header-background-color: #eaf3ed;
+    --ag-header-foreground-color: #174d2c;
+    --ag-odd-row-background-color: #f8fbf9;
+    --ag-row-hover-color: #edf7f0;
+    --ag-selected-row-background-color: #e2f1e7;
+    --ag-border-color: #e2e9e4;
+    --ag-row-border-color: #edf1ee;
+    --ag-header-column-separator-color: #d4e3d8;
+    --ag-input-border-color: #d7e1da;
+    --ag-checkbox-checked-color: #00843d;
+    --ag-range-selection-border-color: #00843d;
+    --ag-wrapper-border-radius: 8px;
+}
+
+.ag-theme-quartz .ag-header {
+    border-bottom: 1px solid #d5e4d9;
+    font-weight: 700;
+}
+
+.ag-theme-quartz .ag-header-cell-label {
+    font-weight: 700;
+    letter-spacing: .25px;
+}
+
+.ag-theme-quartz .ag-header-cell,
+.ag-theme-quartz .ag-cell {
+    padding-left: 13px;
+    padding-right: 13px;
+}
+
+.ag-theme-quartz .ag-row {
+    border-bottom: 1px solid #edf1ee;
+}
+
+.ag-theme-quartz .ag-row-hover {
+    background-color: #edf7f0 !important;
+}
+
+.ag-theme-quartz .ag-paging-panel {
+    min-height: 43px;
+    border-top: 1px solid #e5ece7;
+    color: #65736a;
+}
+
+.ag-theme-quartz .ag-floating-filter-input input {
+    border-radius: 5px;
+}
+
+.footer {
+    padding: 17px 4px 5px;
+    color: #8a968e;
+    font-size: 11px;
+    text-align: center;
+}
+
+@media (max-width: 850px) {
+    .controls-card {
+        grid-template-columns: 1fr 1fr;
+    }
+    .refresh-area {
+        grid-column: 1 / -1;
+        width: 100%;
+    }
+    .page {
+        width: 94%;
+        padding-top: 23px;
+    }
+}
+
+@media (max-width: 560px) {
+    .topbar {
+        min-height: 65px;
+        padding: 0 4%;
+    }
+    .brand-title {
+        font-size: 17px;
+    }
+    .controls-card {
+        grid-template-columns: 1fr;
+        padding: 16px;
+    }
+    .refresh-area {
+        grid-column: auto;
+    }
+    .page-header,
+    .grid-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+
+/* Dash Dropdown compatibility across supported React-Select versions */
+.control .Select-control,
+.control .Select__control,
+.control .Select__control--is-focused {
+    min-height: 42px !important;
+    border: 1px solid #d7e1da !important;
+    border-radius: 7px !important;
+    box-shadow: none !important;
+    background: #fff !important;
+}
+
+.control .Select-control:hover,
+.control .Select__control:hover {
+    border-color: #8bb99a !important;
+}
+
+.control .Select.is-focused:not(.is-open) > .Select-control,
+.control .Select__control--is-focused {
+    border-color: #00843d !important;
+    box-shadow: 0 0 0 2px rgba(0, 132, 61, .10) !important;
+}
+
+.control .Select-value-label,
+.control .Select__single-value,
+.control .Select__multi-value__label {
+    color: #26352c !important;
+    font-size: 12px !important;
+}
+
+.control .Select-placeholder,
+.control .Select__placeholder {
+    color: #87938b !important;
+    font-size: 12px !important;
+}
+
+/* Ensure the AG Grid theme and its container occupy the full card width */
+#pnl-grid.ag-theme-quartz {
+    width: 100%;
+    --ag-font-family: Inter, "Segoe UI", Arial, sans-serif;
+    --ag-font-size: 12px;
+    --ag-header-height: 44px;
+    --ag-row-height: 39px;
+}
+
+
+/* ------------------------------------------------------------------
+   Hierarchical referential and custom filtering panel
+   ------------------------------------------------------------------ */
+.filter-card {
+    margin: 0 0 22px;
+    padding: 19px 22px 21px;
+    border: 1px solid var(--line);
+    border-radius: 13px;
+    background: #fff;
+    box-shadow: 0 3px 12px rgba(25, 55, 37, .045);
+}
+
+.filter-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.filter-heading h4 {
+    margin: 0 0 5px;
+    color: #24382b;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.filter-heading p {
+    margin: 0;
+    color: #849087;
+    font-size: 11.5px;
+}
+
+.filter-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+    gap: 16px;
+}
+
+.clear-filter-button {
+    padding: 8px 13px;
+    border: 1px solid #cfe0d4;
+    border-radius: 6px;
+    background: #f5faf6;
+    color: #08723a;
+    cursor: pointer;
+    font-size: 11.5px;
+    font-weight: 650;
+}
+
+.clear-filter-button:hover {
+    background: #eaf5ee;
+    border-color: #9fc9ac;
+}
+
+.tree-cell {
+    display: flex;
+    align-items: center;
+    min-height: 100%;
+    white-space: nowrap;
+}
+
+.tree-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 21px;
+    height: 21px;
+    margin-right: 6px;
+    padding: 0;
+    border: 1px solid #c9ddcf;
+    border-radius: 5px;
+    background: #f1f8f3;
+    color: #08723a;
+    cursor: pointer;
+    font-size: 15px;
+    line-height: 1;
+}
+
+.tree-toggle:hover {
+    border-color: #00843d;
+    background: #e2f1e7;
+}
+
+.tree-toggle-placeholder {
+    display: inline-block;
+    width: 27px;
+    flex: 0 0 27px;
+}
+
+.tree-label {
+    overflow: hidden;
+    color: #35443a;
+    text-overflow: ellipsis;
+}
+
+.tree-root {
+    color: #174d2c;
+    font-weight: 700;
+}
+
+.ag-theme-quartz .ag-cell {
+    display: flex;
+    align-items: center;
+}
+
+.ag-theme-quartz .ag-header-cell-menu-button {
+    opacity: 1 !important;
+}
+
+@media (max-width: 950px) {
+    .filter-grid {
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 560px) {
+    .filter-grid {
+        grid-template-columns: 1fr;
+    }
+    .filter-heading {
+        align-items: flex-start;
+    }
+}
+
+
+/* Latest layout: keep hierarchy, measures and refresh controls on one row */
+.controls-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr) 160px;
+    align-items: end;
+    gap: 18px;
+    padding: 18px 20px;
+}
+
+.controls-card .control {
+    min-width: 0;
+}
+
+.controls-card .control small {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.controls-card .Select.is-multi .Select-multi-value-wrapper,
+.controls-card .Select__value-container {
+    display: flex;
+    flex-wrap: nowrap !important;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.controls-card .Select-value,
+.controls-card .Select__multi-value {
+    flex: 0 0 auto;
+    max-width: 118px;
+    overflow: hidden;
+}
+
+.controls-card .Select-value-label,
+.controls-card .Select__multi-value__label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.controls-card .Select__indicators {
+    flex: 0 0 auto;
+}
+
+@media (max-width: 720px) {
+    .controls-card {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+    .controls-card .refresh-area {
+        grid-column: 1 / -1;
+        width: 100%;
+    }
+}
+
+@media (max-width: 520px) {
+    .controls-card {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .controls-card .refresh-area {
+        grid-column: auto;
+    }
+}
+
+/* Accounting-style numeric cells */
+.ag-theme-quartz .ag-cell[col-id="daily"],
+.ag-theme-quartz .ag-cell[col-id="mtd"],
+.ag-theme-quartz .ag-cell[col-id="ytd"] {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+}
+
+
+/* Keep each dropdown option's checkbox and label on the same line */
+.control .Select-option,
+.control .Select__option {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 8px;
+    white-space: nowrap !important;
+}
+
+.control .Select-option input[type="checkbox"],
+.control .Select__option input[type="checkbox"],
+.control .Select-option input,
+.control .Select__option input {
+    display: inline-block !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    margin: 0 2px 0 0 !important;
+    vertical-align: middle;
+}
+
+.control .Select-option label,
+.control .Select__option label,
+.control .Select-option span,
+.control .Select__option span {
+    display: inline-block;
+    flex: 0 1 auto;
+    margin: 0;
+    white-space: nowrap !important;
+}
+
+
+/* Native AG Grid grouping + Enterprise side panels (reference layout) */
+.grid-card {
+    padding: 0 18px 18px;
+}
+.ag-theme-quartz .ag-side-bar {
+    border-left: 1px solid #d7e5db;
+    background: #fbfdfb;
+}
+.ag-theme-quartz .ag-side-button-button {
+    color: #245b37;
+}
+.ag-theme-quartz .ag-side-button-button.ag-selected {
+    background: #e8f5ec;
+    color: #08723a;
+}
+.ag-theme-quartz .ag-column-drop-horizontal {
+    min-height: 42px;
+    background: #f7faf8;
+    border-bottom: 1px solid #e2e9e4;
+}
+.ag-theme-quartz .ag-column-drop-cell {
+    border-radius: 5px;
+}
+.ag-theme-quartz .ag-group-expanded,
+.ag-theme-quartz .ag-group-contracted {
+    color: #08723a;
+}
+.ag-theme-quartz .ag-row-group {
+    font-weight: 650;
+}
+
+
+/* Compact configuration row: field selection now lives in AG Grid's panel */
+.grid-controls-card {
+    grid-template-columns: minmax(0, 1fr) 160px;
+    align-items: center;
+}
+.grid-controls-card .control label {
+    margin-bottom: 4px;
+}
+.grid-controls-card .control small {
+    display: block;
+    margin-top: 0;
+    white-space: normal;
+    line-height: 1.5;
+}
+.grid-controls-card .refresh-area {
+    min-width: 160px;
+}
+.ag-theme-quartz .ag-side-bar {
+    border-left: 1px solid #d7e5db;
+    background: #fbfdfb;
+}
+.ag-theme-quartz .ag-side-button-button {
+    color: #245b37;
+}
+.ag-theme-quartz .ag-side-button-button.ag-selected {
+    background: #e8f5ec;
+    color: #08723a;
+}
+.ag-theme-quartz .ag-column-drop-horizontal {
+    min-height: 42px;
+    background: #f7faf8;
+    border-bottom: 1px solid #e2e9e4;
+}
+.ag-theme-quartz .ag-column-drop-cell {
+    border-radius: 5px;
+}
+.ag-theme-quartz .ag-group-expanded,
+.ag-theme-quartz .ag-group-contracted {
+    color: #08723a;
+}
+.ag-theme-quartz .ag-row-group {
+    font-weight: 650;
+}
+@media (max-width: 560px) {
+    .grid-controls-card {
+        grid-template-columns: 1fr;
+    }
+    .grid-controls-card .refresh-area {
+        grid-column: auto;
+        width: 100%;
+    }
+}
